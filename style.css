@@ -1,0 +1,236 @@
+
+:root{
+  --bg:#f4f8f7;
+  --panel:#ffffff;
+  --ink:#1f3439;
+  --muted:#6b7f84;
+  --ming:#2f6674;
+  --aqua:#8ecece;
+  --green:#28a745;
+  --line:#b9cccf;
+  --shadow:0 14px 40px rgba(31,52,57,.10);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  overflow:hidden;
+}
+button{font:inherit}
+.app{height:100%;display:flex;flex-direction:column}
+.topbar{
+  position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:14px 18px;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid #dce7e8;
+}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.logo{
+  width:42px;height:42px;border-radius:13px;background:var(--ming);color:#fff;
+  display:grid;place-items:center;font-weight:800;letter-spacing:.5px;box-shadow:var(--shadow)
+}
+.brand-copy{min-width:0}
+.title{font-size:18px;font-weight:800;line-height:1.1}
+.subtitle{font-size:12px;color:var(--muted);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tabs{display:flex;gap:4px;padding:4px;background:#eef5f5;border-radius:12px}
+.tab{border:0;background:transparent;color:var(--muted);border-radius:9px;padding:8px 16px;font-weight:750;cursor:pointer;transition:.15s ease}
+.tab:hover{color:var(--ink)}
+.tab.active{background:var(--ming);color:#fff;box-shadow:0 3px 10px rgba(31,52,57,.15)}
+.controls{display:flex;align-items:center;gap:8px}
+.btn{
+  border:1px solid #cadbdd;background:#fff;color:var(--ink);border-radius:10px;padding:9px 11px;
+  cursor:pointer;transition:.15s ease;box-shadow:0 3px 10px rgba(31,52,57,.05)
+}
+.btn:hover{transform:translateY(-1px);border-color:#a9c4c7}
+.btn.primary{background:var(--ming);color:#fff;border-color:var(--ming)}
+.zoom-readout{font-size:12px;color:var(--muted);min-width:44px;text-align:center}
+.stage{position:relative;flex:1;min-height:0;overflow:hidden}
+#canvas{width:100%;height:100%;display:block;touch-action:none;cursor:grab}
+#canvas.dragging{cursor:grabbing}
+.grid{fill:none;stroke:#e1ebec;stroke-width:1}
+.legend{
+  position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,.92);border:1px solid #dce7e8;
+  border-radius:12px;padding:10px 12px;box-shadow:var(--shadow);font-size:11px;color:var(--muted)
+}
+.legend strong{color:var(--ink)}
+.help{
+  position:absolute;right:16px;bottom:16px;background:rgba(255,255,255,.92);border:1px solid #dce7e8;
+  border-radius:12px;padding:10px 12px;box-shadow:var(--shadow);font-size:11px;color:var(--muted)
+}
+.node{cursor:grab;user-select:none}
+.node:active{cursor:grabbing}
+.node.center{cursor:pointer}
+.node rect,.node circle{
+  transition:filter .16s ease,transform .16s ease
+}
+.node:hover rect,.node:hover circle{filter:brightness(.98) drop-shadow(0 7px 12px rgba(31,52,57,.12))}
+.node-label{font-weight:750;pointer-events:none;user-select:none}
+.node-meta{font-size:10px;fill:var(--muted);pointer-events:none}
+.link{fill:none;stroke:var(--line);stroke-width:2;opacity:.9}
+.link.secondary{stroke-width:1.5;opacity:.68}
+.example-panel{
+  position:absolute;top:18px;right:18px;width:min(420px,calc(100vw - 36px));max-height:calc(100% - 36px);
+  overflow:auto;background:rgba(255,255,255,.97);border:1px solid #d7e4e5;border-radius:16px;
+  box-shadow:0 24px 70px rgba(31,52,57,.17);padding:18px;display:none;z-index:8
+}
+.example-panel.open{display:block}
+.example-kicker{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:750}
+.example-title{font-size:20px;font-weight:800;margin:5px 0 10px}
+.example-text{font-size:14px;line-height:1.55;color:#41565c}
+.example-section{font-size:11px;font-weight:750;letter-spacing:.08em;color:var(--ming);margin:14px 0 6px;padding-top:10px;border-top:1px solid #e3eded}
+.example-list{margin:0;padding-left:18px;font-size:14px;line-height:1.55;color:#41565c}
+.example-list li{margin-bottom:8px}
+.example-list ul{margin:4px 0 0;padding-left:16px;list-style:'– '}
+.example-list strong{color:var(--ink)}
+.panel-close{
+  position:absolute;top:10px;right:10px;border:0;background:#eef5f5;color:var(--ink);width:32px;height:32px;
+  border-radius:50%;cursor:pointer;font-size:18px
+}
+.badge{
+  display:inline-flex;align-items:center;gap:6px;padding:5px 8px;margin-top:12px;border-radius:999px;
+  background:#f0f7f7;color:var(--ming);font-size:11px;font-weight:750
+}
+.footer-note{font-size:10px;color:var(--muted);margin-top:12px}
+@media (max-width:760px){
+  .topbar{padding:10px 12px;flex-wrap:wrap}
+  .tab{padding:7px 12px}
+  .logo{width:36px;height:36px;border-radius:11px}
+  .title{font-size:16px}
+  .subtitle{display:none}
+  .btn{padding:8px 9px}
+  .legend,.help{font-size:10px;padding:8px 9px}
+  .legend{left:10px;bottom:10px}
+  .help{right:10px;bottom:10px}
+}
+
+/* Bouton « Voir la maquette » dans la carte centrale */
+.node-link{cursor:pointer;outline:none}
+.node-link .pill{fill:#fff;stroke:var(--aqua);stroke-width:2;transition:fill .15s ease,stroke .15s ease}
+.node-link .pill-ico{fill:none;stroke:var(--ming);stroke-width:1.7;pointer-events:none}
+.node-link .pill-txt{fill:var(--ming);font-size:11.5px;font-weight:800;pointer-events:none;user-select:none}
+.node-link:hover .pill,.node-link:focus-visible .pill{fill:#e4f3f3;stroke:var(--ming)}
+
+/* =====================================================================
+   Téléphone — la carte radiale devient une arborescence verticale.
+   La classe .m-mode est posée sur <body> par app.js (écran ≤ 760 px de large,
+   ou téléphone en paysage). Sur ordinateur, rien de ce bloc ne s'applique.
+   ===================================================================== */
+.m-tree{display:none}
+@supports (height:100dvh){body.m-mode .app{height:100dvh}}
+body.m-mode #canvas,
+body.m-mode .legend,
+body.m-mode .help,
+body.m-mode .controls,
+body.m-mode .subtitle,
+body.m-mode .footer-note{display:none}
+
+/* Barre du haut compacte : marque + onglets */
+body.m-mode .topbar{flex-wrap:wrap;justify-content:flex-start;gap:8px 12px;padding:8px 12px}
+body.m-mode .brand{flex:1 1 200px;gap:10px}
+body.m-mode .logo{width:34px;height:34px;border-radius:11px;font-size:16px;flex:none}
+body.m-mode .title{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body.m-mode .tabs{flex:1 1 220px}
+body.m-mode .tab{flex:1;padding:9px 10px;font-size:14px;-webkit-tap-highlight-color:transparent}
+@media (min-width:560px){
+  body.m-mode .tabs{flex:0 0 auto}
+  body.m-mode .tab{flex:none;padding:9px 18px}
+}
+
+/* Zone de lecture */
+body.m-mode .m-tree{
+  display:block;position:absolute;top:0;right:0;bottom:0;left:0;
+  overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+  padding:12px 12px calc(28px + var(--sheet,0px) + env(safe-area-inset-bottom,0px));
+  background:radial-gradient(circle,#dfe9ea 1.3px,transparent 1.6px) 0 0/24px 24px local,var(--bg);
+}
+.m-wrap{max-width:640px;margin:0 auto}
+.m-tree button,.m-tree a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.m-tree button:focus-visible,.m-tree a:focus-visible{outline:3px solid var(--aqua);outline-offset:2px}
+
+/* Replier / Tout ouvrir */
+.m-bar{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.m-bar-btn{
+  min-height:40px;border:1px solid #cadbdd;background:#fff;color:var(--ink);border-radius:10px;
+  font:inherit;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 3px 10px rgba(31,52,57,.05)
+}
+.m-bar-btn:active{background:#eef5f5}
+
+/* Niveau 0 : concept central */
+.m-center{background:var(--ming);border:3px solid #254f59;border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
+.m-center-main{
+  display:block;width:100%;border:0;background:none;color:#fff;font:inherit;cursor:pointer;
+  text-align:center;padding:18px 16px 12px
+}
+.m-center-label{display:block;font-size:24px;font-weight:800;line-height:1.1}
+.m-center-meta{display:block;margin-top:4px;font-size:11px;color:rgba(255,255,255,.85)}
+.m-link{
+  display:flex;align-items:center;justify-content:center;gap:9px;min-height:44px;margin:0 14px 14px;padding:10px 14px;
+  border-radius:999px;background:#fff;border:2px solid var(--aqua);color:var(--ming);
+  font-size:14px;font-weight:800;text-decoration:none
+}
+.m-link:active{background:#e4f3f3;border-color:var(--ming)}
+.m-ico{flex:none;width:9px;height:14px;border:1.7px solid var(--ming);border-radius:3px}
+
+/* Niveau 1 : grandes parties, rattachées à un tronc vertical */
+.m-cats{position:relative;margin-top:14px;padding-left:22px}
+.m-cats::before{content:"";position:absolute;left:8px;top:-14px;bottom:28px;width:2px;background:var(--line);border-radius:2px}
+.m-cat{position:relative;margin-bottom:12px}
+.m-cat::before{content:"";position:absolute;left:-14px;top:27px;width:14px;height:2px;background:var(--line)}
+.m-cat::after{content:"";position:absolute;left:-18px;top:23px;width:10px;height:10px;border-radius:50%;background:var(--c);border:2px solid var(--bg);box-sizing:border-box}
+.m-cat-head{
+  display:flex;align-items:center;gap:10px;width:100%;min-height:56px;padding:9px 14px;border:0;border-radius:15px;
+  background:var(--c);color:#fff;text-align:left;font:inherit;cursor:pointer;box-shadow:0 4px 12px rgba(31,52,57,.10)
+}
+.m-cat-head.light{color:var(--ink)}
+.m-cat-txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.m-cat-label{font-size:15px;font-weight:750;line-height:1.2}
+.m-cat-meta{font-size:11px;opacity:.85}
+.m-chev{flex:none;width:9px;height:9px;border-right:2.5px solid currentColor;border-bottom:2.5px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .2s ease}
+.m-cat.open .m-chev{transform:translateY(2px) rotate(225deg)}
+
+/* Niveau 2 : sous-parties (le détail s'ouvre dans le volet du bas) */
+.m-points{list-style:none;margin:0;padding:8px 0 0 20px;animation:mFold .18s ease-out}
+.m-points li{position:relative;padding-left:18px;margin-bottom:8px}
+.m-points li:last-child{margin-bottom:0}
+.m-points li::before{content:"";position:absolute;left:0;top:-8px;width:2px;height:calc(100% + 8px);background:var(--c)}
+.m-points li:last-child::before{height:calc(50% + 8px)}
+.m-points li::after{content:"";position:absolute;left:0;top:50%;width:16px;height:2px;background:var(--c)}
+.m-point{
+  display:flex;align-items:center;gap:10px;width:100%;min-height:54px;padding:9px 12px;
+  background:#fff;border:1.5px solid var(--c);border-radius:12px;color:var(--ink);
+  text-align:left;font:inherit;cursor:pointer;box-shadow:0 3px 10px rgba(31,52,57,.05)
+}
+.m-point:active{transform:scale(.99)}
+.m-point.sel{background:#eaf4f4;box-shadow:0 0 0 3px rgba(47,102,116,.18)}
+@supports (background:color-mix(in srgb,red 10%,blue)){
+  .m-point.sel{box-shadow:0 0 0 3px color-mix(in srgb,var(--c) 30%,transparent)}
+}
+.m-point-txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.m-point-label{font-size:14px;font-weight:700;line-height:1.25}
+.m-point-meta{font-size:10.5px;color:var(--muted)}
+.m-go{flex:none;width:8px;height:8px;border-top:2.5px solid var(--muted);border-right:2.5px solid var(--muted);transform:rotate(45deg)}
+
+/* Panneau d'explication : volet qui monte depuis le bas */
+body.m-mode .example-panel{
+  top:auto;left:0;right:0;bottom:0;width:auto;max-height:70%;background:#fff;
+  border-width:1px 0 0;border-radius:20px 20px 0 0;
+  padding:22px 18px calc(22px + env(safe-area-inset-bottom,0px));
+  box-shadow:0 -16px 50px rgba(31,52,57,.22);
+  overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+}
+body.m-mode .example-panel.open{animation:mSheetUp .22s ease-out}
+body.m-mode .panel-close{
+  position:sticky;top:8px;float:right;z-index:2;width:40px;height:40px;margin:-12px -6px 6px 10px;
+  font-size:22px;line-height:1;-webkit-tap-highlight-color:transparent
+}
+body.m-mode .example-text,
+body.m-mode .example-list{font-size:15px}
+@media (max-height:520px){body.m-mode .example-panel{max-height:82%}}
+
+@keyframes mSheetUp{from{transform:translateY(24px);opacity:0}to{transform:none;opacity:1}}
+@keyframes mFold{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  body.m-mode .example-panel.open,.m-points{animation:none}
+  .m-chev{transition:none}
+}

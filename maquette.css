@@ -1,0 +1,99 @@
+:root{--ming:#2f6674;--ink:#1f3439;--muted:#6b7f84;--aqua:#8ecece;--bg:#f4f8f7;--line:#dce7e8;--ok:#28a745;--warn:#d29b45;--bad:#d9534f;--acc:var(--ming)}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:#e6efef;color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:12px;padding:14px}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--aqua);outline-offset:2px}
+.strip{display:flex;gap:12px;align-items:center;font-size:12px;color:var(--muted);flex-wrap:wrap;justify-content:center}
+.strip a{color:var(--ming);font-weight:700;text-decoration:none}
+.pre{background:var(--ink);color:#fff;border-radius:99px;padding:3px 10px;font-weight:700}
+.phone{width:390px;max-width:100%;height:790px;max-height:calc(100vh - 70px);min-height:540px;background:var(--bg);border-radius:34px;border:8px solid var(--ink);box-shadow:0 30px 70px rgba(31,52,57,.25);position:relative;overflow:hidden;display:flex;flex-direction:column}
+.head{padding:16px 18px 12px;background:var(--acc);color:#fff}
+.head h1{margin:0;font-size:19px}
+.head p{margin:2px 0 0;font-size:12px;opacity:.85}
+.screens{flex:1;overflow:auto;padding:14px}
+.screen{display:none}.screen.on{display:block}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:12px}
+.card h2{margin:0 0 8px;font-size:14px}
+.big{font-size:30px;font-weight:800;line-height:1.1}
+.muted{color:var(--muted);font-size:12px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:7px 0;border-top:1px solid #edf3f3;font-size:13px}
+.card h2+.row{border-top:0}
+.bar{height:8px;border-radius:9px;background:#e6efef;overflow:hidden;margin-top:5px}
+.bar i{display:block;height:100%;background:var(--acc)}
+.nav{display:flex;border-top:1px solid var(--line);background:#fff}
+.nav button{flex:1;border:0;background:none;padding:8px 2px 10px;font-size:11px;color:var(--muted);font-weight:700}
+.nav button b{display:block;font-size:18px;font-weight:400}
+.nav button.on{color:var(--acc)}
+.btn{border:0;background:var(--acc);color:#fff;border-radius:11px;padding:10px 14px;font-weight:700;width:100%;margin-top:8px}
+.btn.alt{background:#eef5f5;color:var(--ink)}
+.chip{border:1px solid var(--line);background:#fff;border-radius:99px;padding:6px 11px;font-size:12px;font-weight:700;margin:0 6px 6px 0}
+.chip.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.note{border-radius:12px;padding:10px 12px;font-size:13px;margin-bottom:10px;background:#eef7ef;border:1px solid #cfe8d3}
+.note.warn{background:#fff6e8;border-color:#f1dcb4}
+.note.bad{background:#fdeeee;border-color:#f3c7c7}
+.fab{position:absolute;right:16px;bottom:76px;width:52px;height:52px;border-radius:50%;border:0;background:var(--acc);color:#fff;font-size:28px;box-shadow:0 8px 20px rgba(31,52,57,.3);z-index:4}
+.sheet{position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:20px 20px 0 0;padding:16px;box-shadow:0 -12px 40px rgba(31,52,57,.25);transform:translateY(105%);transition:transform .2s;z-index:6}
+.sheet.on{transform:none}
+.sheet h2{margin:0 0 6px;font-size:16px}
+label{display:block;font-size:12px;color:var(--muted);margin:8px 0 3px}
+input,select{width:100%;padding:10px;border:1px solid #cadbdd;border-radius:10px;font:inherit;font-size:14px;background:#fff}
+.toast{position:absolute;left:50%;top:70px;transform:translate(-50%,-20px);background:var(--ink);color:#fff;padding:9px 14px;border-radius:99px;font-size:12px;opacity:0;pointer-events:none;transition:.2s;z-index:9;max-width:90%;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.bub{max-width:88%;padding:9px 12px;border-radius:14px;font-size:13px;margin-bottom:8px;line-height:1.45}
+.bub.me{margin-left:auto;background:var(--acc);color:#fff;border-bottom-right-radius:4px}
+.bub.ai{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px}
+.tag{display:inline-block;font-size:11px;font-weight:700;color:#1b7a34;background:#e6f5ea;border-radius:99px;padding:2px 8px}
+/* =====================================================================
+   Téléphone (≤ 480 px de large, ou téléphone en paysage) :
+   la maquette occupe tout l'écran et se comporte comme une vraie appli.
+   Sur ordinateur et tablette, le cadre de téléphone reste identique.
+   ===================================================================== */
+@media (max-width:480px), (max-height:520px) and (pointer:coarse){
+  html{height:100%;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  body{height:100%;min-height:0;padding:0;gap:0;align-items:stretch;overflow:hidden;overscroll-behavior:none}
+  @supports (height:100dvh){body{height:100dvh}}
+
+  /* bandeau de maquette : compact, sur deux lignes à droite */
+  .strip{
+    flex:none;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;justify-content:normal;
+    gap:1px 10px;padding:5px 12px
+  }
+  .strip a{grid-row:1 / span 2;padding:8px 0;font-size:12px}
+  .strip .pre{grid-column:2;grid-row:1;justify-self:end;padding:2px 9px;font-size:10px}
+  .strip > span:not(.pre){grid-column:2;grid-row:2;justify-self:end;font-size:10px}
+
+  /* l'appli remplit le reste de l'écran */
+  .phone{
+    flex:1 1 auto;align-self:center;width:100%;max-width:640px;min-height:0;height:auto;max-height:none;
+    border:0;border-radius:0;box-shadow:none
+  }
+  .head{padding:14px 16px 12px}
+  .screens{padding:14px 14px 18px;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+  .phone:has(.fab) .screens{padding-bottom:92px}
+
+  /* barre de navigation : texte fluide, zone de tap confortable, encoche respectée */
+  .nav{padding-bottom:env(safe-area-inset-bottom,0px)}
+  .nav button{min-width:0;min-height:56px;padding:8px 0 10px;font-size:clamp(9px,2.5vw,11px);white-space:nowrap}
+  .fab{width:56px;height:56px;right:18px;bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+
+  /* champs et boutons : pas de zoom automatique iOS (police ≥ 16 px), cibles tactiles ≥ 38 px */
+  button,.chip,.btn,.fab,.nav button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+  input:not([type=checkbox]),select{font-size:16px;padding:12px;min-height:46px}
+  input[type=checkbox]{width:22px!important;height:22px;min-height:0;padding:0;flex:none;accent-color:var(--acc)}
+  .btn{min-height:46px;font-size:15px}
+  .chip{min-height:38px;padding:8px 14px;font-size:13px}
+  .row{padding:9px 0;font-size:14px}
+  .bub{max-width:90%;font-size:14px}
+
+  .sheet{max-height:88%;overflow:auto;padding:18px 16px calc(18px + env(safe-area-inset-bottom,0px));border-radius:22px 22px 0 0}
+  .toast{top:12px}
+}
+/* téléphone en paysage : en-tête plus bas pour laisser de la place au contenu */
+@media (max-height:520px) and (pointer:coarse){
+  .head{padding:8px 16px}
+  .head p{margin-top:0}
+  .nav button{min-height:46px;padding:4px 0 6px}
+  .phone:has(.fab) .screens{padding-bottom:84px}
+  .fab{bottom:calc(60px + env(safe-area-inset-bottom,0px))}
+}

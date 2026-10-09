@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MediSTUD — Maquette de préproduction</title>
+<link rel="stylesheet" href="maquette.css?v=2">
+<style>
+.body svg{display:block;margin:0 auto;max-width:200px}
+.sil{fill:#dbe9ea;stroke:#b9cccf;stroke-width:2}
+.z{fill:transparent;stroke:#8ecece;stroke-width:1.5;stroke-dasharray:3 3;cursor:pointer}
+.z[data-st=cur]{fill:#e06666;stroke:#fff;stroke-width:2;stroke-dasharray:0}
+.z[data-st=old]{fill:#28a745;stroke:#fff;stroke-width:2;stroke-dasharray:0}
+.pin{position:absolute;width:14px;height:14px;border-radius:50%;background:var(--ok);border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.3)}
+.map{position:relative;height:130px;border-radius:14px;margin-bottom:12px;border:1px solid var(--line);background:linear-gradient(90deg,#dfe9ea 1px,transparent 1px) 0 0/32px 32px,linear-gradient(#dfe9ea 1px,transparent 1px) 0 0/32px 32px,#eef5f5}
+.say{font-size:20px;font-weight:800;color:var(--ming)}
+/* Téléphone : schéma corporel plus grand et points plus faciles à toucher */
+@media (max-width:480px), (max-height:520px) and (pointer:coarse){
+.body svg{max-width:min(280px,100%)}
+.z{transform-box:fill-box;transform-origin:center;transform:scale(1.2);touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.map{height:150px}
+}
+</style>
+</head>
+<body>
+<div class="strip"><a href="index.html#medistud">← Carte mentale MediSTUD</a><span class="pre">Maquette de préproduction</span><span>Données fictives</span></div>
+<div class="phone">
+  <div class="head"><h1>MediSTUD</h1><p>Ton carnet de santé à l'étranger · Canada</p></div>
+  <div class="screens">
+    <section class="screen on" id="body">
+      <div style="margin-bottom:8px"><button class="chip on" id="bf" onclick="side('f')">Face</button><button class="chip" id="bb" onclick="side('b')">Dos</button><span class="muted">🔴 actuel · 🟢 passé</span></div>
+      <div class="card body"><svg viewBox="0 0 200 340" aria-label="Schéma corporel">
+        <circle class="sil" cx="100" cy="34" r="22"/><rect class="sil" x="68" y="62" width="64" height="112" rx="26"/>
+        <rect class="sil" x="44" y="68" width="18" height="104" rx="9"/><rect class="sil" x="138" y="68" width="18" height="104" rx="9"/>
+        <rect class="sil" x="72" y="168" width="26" height="160" rx="13"/><rect class="sil" x="102" y="168" width="26" height="160" rx="13"/>
+        <g id="gf"><circle class="z" data-n="Tête" cx="100" cy="34" r="12"/><circle class="z" data-n="Gorge" data-st="cur" data-i="Angine en cours · depuis le 12 oct.|Dr Martin, Clinique Campus Sherbrooke|Sirop + antibiotique (traduits en français)" cx="100" cy="60" r="9"/>
+          <circle class="z" data-n="Poumons" cx="100" cy="95" r="13"/><circle class="z" data-n="Ventre" cx="100" cy="140" r="14"/>
+          <circle class="z" data-n="Genou" cx="85" cy="235" r="11"/><circle class="z" data-n="Genou" cx="115" cy="235" r="11"/>
+          <circle class="z" data-n="Cheville" data-st="old" data-i="Entorse guérie · 14 sept.|Dr Lavoie, Urgences Hôpital Central|Bandage + repos 10 jours" cx="85" cy="312" r="10"/></g>
+        <g id="gb" style="display:none"><circle class="z" data-n="Haut du dos" cx="100" cy="95" r="14"/><circle class="z" data-n="Lombaires" cx="100" cy="145" r="14"/></g></svg></div>
+      <div class="card" id="zone"><h2>Touche une zone</h2><div class="muted">Un point de couleur ouvre l'historique de la zone. Une zone vide permet d'ajouter un symptôme en 5 secondes.</div></div>
+    </section>
+    <section class="screen" id="care">
+      <div class="note warn">⚠️ Ton traitement pour l'asthme se termine dans 7 jours. Pense à consulter un médecin pour renouveler ton ordonnance.</div>
+      <div class="card"><h2>Aujourd'hui</h2>
+        <label class="row" style="color:inherit;margin:0"><span>💊 20h · Antibiotique</span><input type="checkbox" style="width:auto" onchange="toast('Pris en compte')"></label>
+        <label class="row" style="color:inherit;margin:0"><span>💊 8h · Pilule</span><input type="checkbox" checked style="width:auto"></label>
+        <label class="row" style="color:inherit;margin:0"><span>💊 8h · Thyroïde</span><input type="checkbox" checked style="width:auto"></label></div>
+      <div class="card"><h2>🩺 Suivi</h2>Cela fait 3 jours que tu as signalé une douleur à la cheville. Est-ce que ça va mieux ?
+        <div style="display:flex;gap:8px"><button class="btn" onclick="toast('Noté : ça va mieux')">Oui</button><button class="btn alt" onclick="toast('Noté : on garde un œil dessus')">Pas encore</button></div></div>
+      <div class="card"><h2>Suivi menstruel</h2><div class="row"><span>Jour 14 du cycle</span><span class="tag">Activé</span></div><div class="muted">Voyage et décalage horaire peuvent dérégler les cycles.</div></div>
+    </section>
+    <section class="screen" id="net">
+      <div class="map"><i class="pin" style="left:30%;top:40%"></i><i class="pin" style="left:62%;top:25%"></i><i class="pin" style="left:78%;top:68%"></i></div>
+      <div><button class="chip" data-toggle="fr">Parle français</button><button class="chip" data-toggle="ass">Partenaire assurance</button><button class="chip" data-toggle="u24">Urgences 24/7</button></div>
+      <div class="card place" data-t="fr ass"><h2>Clinique Campus Sherbrooke</h2><span class="tag">✔ Vérifié STUDCORP</span><div class="muted">Médecin généraliste · 0,4 km · français, anglais</div></div>
+      <div class="card place" data-t="fr"><h2>Pharmacie du Campus</h2><span class="tag">✔ Vérifié STUDCORP</span><div class="muted">Pharmacie · 0,6 km · français</div></div>
+      <div class="card place" data-t="fr ass u24"><h2>Urgences Hôpital Central</h2><span class="tag">✔ Vérifié STUDCORP</span><div class="muted">Urgences 24/7 · 2,1 km · partenaire assurance</div></div>
+    </section>
+    <section class="screen" id="tr">
+      <div class="card"><h2>Équivalence de médicament</h2><input id="med" value="Doliprane 1000 mg" aria-label="Médicament">
+        <button class="btn" onclick="$('#eqr').style.display='block'">Trouver l'équivalent local</button>
+        <div id="eqr" class="note" style="display:none;margin:10px 0 0">🇨🇦 <b>Tylenol</b> (paracétamol). En pharmacie, demande « Acetaminophen ».</div></div>
+      <div class="card"><h2>Comment dire…</h2><div class="muted">J'ai des brûlures d'estomac depuis hier</div>
+        <button class="btn" onclick="$('#say').style.display='block'">Générer la carte à montrer</button>
+        <div id="say" style="display:none;margin-top:10px;text-align:center"><div class="say">Tengo acidez estomacal desde ayer.</div></div></div>
+      <div class="card"><h2>Interaction</h2><div class="muted">Sirop pour la toux avec mon traitement pour le cœur ?</div>
+        <div class="note warn" style="margin:8px 0 0">Première indication seulement : demande toujours conseil au pharmacien.</div></div>
+    </section>
+    <section class="screen" id="doc">
+      <div class="card"><h2>Rembourser une consultation</h2>Entorse · consultation de 90 $
+        <button class="btn" onclick="toast('Facture envoyée à ton conseiller STUDCORP')">📸 Photographier la facture</button></div>
+      <div class="card"><h2>Bilan de mobilité</h2><div class="muted">PDF traduit en français : maladies contractées, médecins vus, traitements prescrits sur place.</div>
+        <button class="btn" onclick="toast('Dossier de mobilité exporté (PDF)')">📥 Exporter mon dossier</button></div>
+      <div class="card"><h2>Profil santé</h2><div class="row"><span>Destination</span><b>Canada</b></div><div class="row"><span>Allergies</span><b>Arachides</b></div><div class="row"><span>Traitements de fond</span><b>Pilule · Thyroïde</b></div></div>
+    </section>
+  </div>
+  <div class="sheet" id="add"><h2 id="at">Ajout rapide</h2>
+    <label for="q">Quoi ?</label><select id="q"><option>🤢 Nausées</option><option>🤕 Douleur</option><option>🌡️ Fièvre</option></select>
+    <label for="i">Intensité</label><select id="i"><option>Légère</option><option selected>Modérée</option><option>Forte</option></select>
+    <button class="btn" onclick="save()">Enregistrer</button><button class="btn alt" onclick="sheet()">Annuler</button></div>
+  <div class="toast" role="status"></div>
+  <nav class="nav" aria-label="Navigation MediSTUD">
+    <button class="on" data-s="body"><b>🧍</b>Corps</button><button data-s="care"><b>💊</b>Soins</button><button data-s="net"><b>📍</b>Où me soigner</button>
+    <button data-s="tr"><b>🌐</b>Traduire</button><button data-s="doc"><b>📁</b>Dossier</button>
+  </nav>
+</div>
+<script src="maquette.js?v=1"></script>
+<script>
+let cur=null;
+function side(s){$('#gf').style.display=s=='f'?'':'none';$('#gb').style.display=s=='b'?'':'none';$('#bf').classList.toggle('on',s=='f');$('#bb').classList.toggle('on',s=='b');$('#zone').innerHTML='<h2>Touche une zone</h2>'}
+$$('.z').forEach(z=>z.onclick=()=>{cur=z;const n=z.dataset.n;
+ if(z.dataset.i){const [a,b,c]=z.dataset.i.split('|');$('#zone').innerHTML='<h2>'+n+'</h2><b>'+a+'</b><div class="row"><span>Médecin</span><span>'+b+'</span></div><div class="row"><span>Ordonnance</span><span>'+c+'</span></div>'}
+ else{$('#at').textContent='Ajout rapide · '+n;sheet('add')}});
+/* Téléphone : après un tap sur un point coloré, la fiche de la zone est ramenée à l'écran */
+const phoneMq=matchMedia('(max-width:480px), (max-height:520px) and (pointer:coarse)');
+$$('.z').forEach(z=>z.addEventListener('click',()=>{if(phoneMq.matches&&z.dataset.i)$('#zone').scrollIntoView({block:'nearest',behavior:'smooth'})}));
+function save(){cur.dataset.st='cur';cur.dataset.i='Symptôme ajouté · aujourd\'hui|À renseigner|—';sheet();toast('Enregistré en 5 secondes')}
+const on=new Set();
+$$('.chip[data-toggle]').forEach(c=>c.onclick=()=>{c.classList.toggle('on');c.classList.contains('on')?on.add(c.dataset.toggle):on.delete(c.dataset.toggle);
+ $$('.place').forEach(p=>p.style.display=[...on].every(t=>p.dataset.t.split(' ').includes(t))?'':'none')});
+</script>
+</body>
+</html>

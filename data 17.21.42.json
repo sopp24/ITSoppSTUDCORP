@@ -1,0 +1,130 @@
+{
+  "title": "EcoSTUD",
+  "subtitle": "Budget & assistant de décision pour la mobilité internationale étudiante",
+  "levels": {
+    "center": {
+      "label": "EcoSTUD",
+      "description": "Permettre à un étudiant de savoir combien son séjour à l'étranger va lui coûter, de suivre ce qu'il dépense réellement et d'anticiper les dépenses à venir, dans une seule interface simple."
+    }
+  },
+  "categories": [
+    {"id": "positionnement", "label": "1. Positionnement", "color": "#2F6674", "points": [
+      {"label": "Objectif", "explication": "Permettre à un étudiant de savoir combien son séjour à l'étranger va lui coûter, de suivre ce qu'il dépense réellement et d'anticiper les dépenses à venir, dans une seule interface simple.",
+       "exemples": ["Savoir : combien le séjour va coûter", "Suivre : ce qu'il dépense réellement", "Anticiper : les dépenses à venir", "Le tout dans une seule interface simple"]},
+      {"label": "Nom", "explication": "Le service s'appelle EcoSTUD. Il peut être ajouté en signet sur le téléphone : c'est une « app sans app ».",
+       "exemples": ["EcoSTUD — signet téléphone possible => une « app sans app »"]},
+      {"label": "Promesse du service", "explication": "Le service repose sur 4 grandes fonctions, qui forment un cycle.",
+       "exemples": ["Prévoir : l'étudiant construit son budget avant son départ.", "Suivre : il renseigne ses dépenses au fur et à mesure.", "Anticiper : il ajoute ses dépenses et événements futurs.", "Alerter : l'outil lui signale lorsqu'il s'éloigne de son budget.", "Cycle : Je prévois → je dépense → je compare → j'anticipe → j'ajuste."]},
+      {"label": "Différenciation", "explication": "Un outil pensé spécifiquement pour la mobilité internationale étudiante, et pas pour un budget généraliste.",
+       "exemples": ["Budget de séjour · devises · dépenses de départ · voyages · événements futurs · projection jusqu'au retour en France · accompagnement adapté à la vie étudiante."]}
+    ]},
+    {"id": "parcours", "label": "2. Parcours utilisateur", "color": "#3D7A84", "points": [
+      {"label": "Créer un séjour", "explication": "L'étudiant crée son séjour et renseigne les informations de base.",
+       "exemples": [{"titre": "Il renseigne :", "lignes": ["destination", "dates de début et de fin", "devise", "budget disponible", "revenus prévus", "éventuelle aide familiale", "bourse", "Erasmus / aide à la mobilité", "dépenses déjà connues"]}]},
+      {"label": "Prévoir les dépenses", "explication": "L'outil demande ensuite les principales dépenses prévues, puis calcule un budget prévisionnel.",
+       "exemples": [{"titre": "Séjour à Montréal — 5 mois · Budget disponible : 7 500 €", "lignes": ["logement : 3 500 €", "nourriture : 1 250 €", "transport : 500 €", "téléphone : 200 €", "voyages : 600 €", "loisirs : 500 €", "imprévus : 500 €", "autres : 450 €"]}]},
+      {"label": "Renseigner les revenus", "explication": "Le service ne suit pas seulement les sorties : il intègre aussi les entrées d'argent (salaire, bourse, Erasmus, aide familiale, virement, remboursement, revenus ponctuels).",
+       "exemples": [{"titre": "Novembre", "lignes": ["+500 € aide familiale", "+450 € salaire", "−700 € logement", "−230 € alimentation", "−85 € transport", "−140 € loisirs", "Solde prévisionnel : −205 €"]}]},
+      {"label": "Ajouter rapidement", "explication": "Ajouter une dépense doit être extrêmement rapide (quelques secondes maximum). Sinon les étudiants arrêteront de renseigner leurs dépenses.",
+       "exemples": [{"titre": "Bouton « ＋ Ajouter une dépense »", "lignes": ["Montant : 18,50", "Devise : CAD", "Catégorie : 🍔 Alimentation", "Date : aujourd'hui", "Description : McDonald's", "→ Ajouter"]}]}
+    ]},
+    {"id": "dashboard", "label": "3. Dashboard & pilotage", "color": "#4A8A91", "points": [
+      {"label": "Vue séjour", "explication": "À l'ouverture, l'application affiche l'état du séjour à partir du budget prévisionnel calculé.",
+       "exemples": [{"titre": "À l'ouverture", "lignes": ["Ton séjour : Montréal (12 septembre → 20 janvier)", "Ton budget : 7 500 €", "Dépensé : 2 840 €", "Prévu : 3 150 €", "Disponible : 4 660 €"]}]},
+      {"label": "Budget quotidien", "explication": "Un budget quotidien / hebdomadaire recommandé, recalculé selon le temps et le budget restant.",
+       "exemples": ["Budget quotidien recommandé : 32 €/jour"]},
+      {"label": "Projection de fin de séjour", "explication": "Un signal en couleur indique la trajectoire du budget jusqu'à la fin du séjour.",
+       "exemples": ["🟢 Budget maîtrisé (ou)", "🟠 Attention : tu dépenses actuellement plus rapidement que prévu (ou)", "🔴 Risque de dépasser ton budget avant la fin du séjour"]},
+      {"label": "Jauge du séjour", "explication": "Une jauge très simple visuellement, qui compare surtout le temps restant et le budget restant : une lecture extrêmement intuitive.",
+       "exemples": ["Budget : 🟢🟢🟢🟢🟢🟢🟡🟡 (68 % du budget restant)", "Temps restant : 54 % | Budget restant : 68 % ➡️ bonne situation", "Temps restant : 45 % | Budget restant : 20 % ➡️ attention"]},
+      {"label": "Bilan final", "explication": "À la fin du séjour, le service génère un bilan : une vraie sensation de clôture.",
+       "exemples": [{"titre": "Ton séjour au Canada", "lignes": ["Budget initial : 7 500 €", "Dépenses réelles : 7 180 €", "Économie : 320 €", "Top 3 dépenses : logement, alimentation, voyages", "Catégorie la plus dépassée : Loisirs +18 %", "Ton séjour t'a coûté en moyenne 47,80 € par jour"]}]}
+    ]},
+    {"id": "depenses", "label": "4. Dépenses", "color": "#5B9B9E", "points": [
+      {"label": "Catégories", "explication": "Des catégories préconfigurées, regroupées en quatre familles.",
+       "exemples": ["Essentielles : logement ; alimentation ; transport ; téléphone ; assurance ; frais universitaires.", "Vie quotidienne : restaurants ; sorties ; shopping ; sport ; loisirs.", "Mobilité : avion ; train ; bus ; voyages ; excursions.", "Autres : imprévus ; santé ; administratif ; cadeaux."]},
+      {"label": "Catégories personnalisables", "explication": "L'étudiant peut ensuite créer ses propres catégories selon son séjour.",
+       "exemples": ["Catégories préconfigurées + catégories créées par l'étudiant."]},
+      {"label": "Dépenses récurrentes", "explication": "Très important : l'utilisateur ne devrait pas avoir à les rentrer chaque fois.",
+       "exemples": ["Loyer : 700 € tous les 1ers du mois", "Netflix : 15 € tous les mois", "Téléphone : 25 € tous les mois", "Abonnement transport : 40 €"]},
+      {"label": "Visualisation", "explication": "Une répartition très visuelle des dépenses, avec des graphiques simples.",
+       "exemples": [{"titre": "Dépenses du mois", "lignes": ["🍔 Alimentation : 32 %", "🏠 Logement : 28 %", "🚇 Transport : 12 %", "✈️ Voyages : 10 %", "🎉 Loisirs : 9 %", "📱 Téléphone : 4 %", "💡 Autres : 5 %"]}, {"titre": "Graphiques simples", "lignes": ["répartition par catégorie", "évolution semaine par semaine", "évolution mois par mois", "prévu vs réel", "budget restant"]}]}
+    ]},
+    {"id": "anticipation", "label": "5. Anticipation", "color": "#6AA7A5", "points": [
+      {"label": "Dépenses futures", "explication": "L'une des meilleures idées du concept : l'étudiant crée des dépenses futures, immédiatement intégrées dans la projection.",
+       "exemples": ["18 octobre : Concert (80 CAD ≈ 53 €)", "27 octobre : Week-end à New York (450 CAD ≈ 298 €)", "3 novembre : Billet d'avion (600 CAD ≈ 397 €)"]},
+      {"label": "Argent réellement disponible", "explication": "Distinguer l'argent disponible de l'argent réellement disponible après dépenses prévues serait extrêmement utile.",
+       "exemples": [{"titre": "Message affiché", "lignes": ["Tu as 1 400 € disponibles aujourd'hui.", "Tu as déjà prévu 850 € de dépenses dans les 30 prochains jours.", "Donc : budget réellement disponible : 550 €"]}]},
+      {"label": "Calendrier", "explication": "Un onglet Calendrier : l'étudiant voit quand il va dépenser, pas seulement combien il a dépensé.",
+       "exemples": [{"titre": "Octobre", "lignes": ["12 — Restaurant — 35 €", "18 — Concert — 53 €", "25 — Voyage Toronto — 210 €", "27 — Week-end New York — 298 €"]}]},
+      {"label": "Prévu vs réel", "explication": "Comparer ce qui était planifié avec ce qui a réellement été dépensé, semaine après semaine ou mois après mois.",
+       "exemples": ["✅ Tu as dépensé 40 € de moins que prévu cette semaine."]}
+    ]},
+    {"id": "devises", "label": "6. Devises & comptes", "color": "#7AB5B0", "points": [
+      {"label": "Conversion automatique", "explication": "Fonction essentielle : l'étudiant saisit un montant, l'application affiche l'équivalent en euros.",
+       "exemples": ["Saisie : 120 CAD → affichage : ≈ 79 €"]},
+      {"label": "Double affichage", "explication": "L'étudiant choisit comment saisir et afficher ses montants.",
+       "exemples": ["saisir toutes ses dépenses dans la monnaie locale ;", "afficher ses résultats en euros ;", "afficher les deux."]},
+      {"label": "Plusieurs comptes / devises", "explication": "L'étudiant peut conserver plusieurs comptes / devises. Il faut réfléchir à l'utilisation de la conversion.",
+       "exemples": [{"titre": "Exemple", "lignes": ["Ton budget initial : 7 500 €", "Ton compte actuel : 6 230 CAD", "Équivalent indicatif : 4 100 €"]}]},
+      {"label": "Voyages pendant le séjour", "explication": "Particulièrement pertinent pour les étudiants qui voyagent pendant leur séjour : dépenses en CAD, USD ou EUR.",
+       "exemples": ["Week-end à New York : 450 CAD ≈ 298 €"]}
+    ]},
+    {"id": "alertes", "label": "7. Alertes intelligentes", "color": "#D29B45", "points": [
+      {"label": "Principe", "explication": "Éviter les simples notifications du type « Vous avez dépassé votre budget. », trop basiques. Le système doit être contextuel : c'est ici que l'outil devient réellement intelligent.",
+       "exemples": ["À éviter : « Vous avez dépassé votre budget. »", "À privilégier : des alertes contextuelles (voir les exemples 1 à 6)"]},
+      {"label": "Dépassement contextuel", "explication": "Signale un écart par catégorie et par période.",
+       "exemples": ["Exemple 1 : ⚠️ Tu as dépensé 25 % de plus que ton budget alimentation cette semaine."]},
+      {"label": "Rythme de dépense", "explication": "Rappelle le budget quotidien recommandé du moment.",
+       "exemples": ["Exemple 2 : 💡 Ton budget quotidien recommandé est actuellement de 24 €."]},
+      {"label": "Événements à venir", "explication": "Prévient quand plusieurs dépenses importantes approchent.",
+       "exemples": ["Exemple 3 : ⚠️ Tu as 3 dépenses importantes prévues cette semaine."]},
+      {"label": "Impact d'un voyage", "explication": "Mesure le poids d'un voyage sur le budget restant.",
+       "exemples": ["Exemple 4 : ✈️ Ton week-end à New York représente 12 % de ton budget restant."]},
+      {"label": "Bonne performance", "explication": "Signale aussi ce qui va bien.",
+       "exemples": ["Exemple 5 : ✅ Tu as dépensé 40 € de moins que prévu cette semaine."]},
+      {"label": "Risque anticipé", "explication": "Projette le rythme actuel jusqu'à la fin du séjour.",
+       "exemples": ["Exemple 6 : 🔴 À ton rythme actuel, tu risques d'épuiser ton budget 18 jours avant la fin de ton séjour."]}
+    ]},
+    {"id": "assistant", "label": "8. Assistant IA", "color": "#A56B96", "points": [
+      {"label": "« Puis-je me le permettre ? »", "explication": "Une excellente fonctionnalité différenciante : l'étudiant envisage une dépense et l'outil lui répond. Cela transforme le service en véritable assistant de décision.",
+       "exemples": [{"titre": "L'étudiant envisage : Week-end à New York : 350 €", "lignes": ["💰 Cette dépense représente 15 % de ton budget restant.", "Après cette dépense, ton budget quotidien passerait de 31 € à 26 €.", "Verdict : faisable, mais ton budget sera plus serré pendant les 3 prochaines semaines."]}]},
+      {"label": "« Et si ? »", "explication": "Une simulation : l'application simule automatiquement l'impact d'une dépense hypothétique.",
+       "exemples": [{"titre": "Et si je dépense 500 € pour un voyage ?", "lignes": ["Budget actuel : 2 800 €", "Après le voyage : 2 300 €", "Budget quotidien futur : 38 € → 31 €"]}]},
+      {"label": "Aide à la décision", "explication": "L'outil explique l'impact d'une dépense avant qu'elle ne soit engagée, plutôt que de signaler uniquement un dépassement après coup.",
+       "exemples": ["Cela permet de prendre une décision avant de dépenser."]}
+    ]},
+    {"id": "mobilite-studcorp", "label": "9. Mobilité & STUDCORP", "color": "#28A745", "points": [
+      {"label": "Budget de départ", "explication": "Le budget peut être directement connecté aux dépenses liées à la mobilité : l'étudiant construit son budget complet de mobilité. Cela rapproche énormément l'outil de l'activité de STUDCORP.",
+       "exemples": [{"titre": "Lors de la préparation — Ton départ :", "lignes": ["✈️ Billet d'avion", "🏥 Assurance", "🏠 Logement", "🎓 Frais universitaires", "📱 Téléphone", "🛂 Visa", "🚆 Transport", "🧳 Bagages"]}]},
+      {"label": "Produits STUDCORP", "explication": "Possibilité d'intégrer les produits STUDCORP et de les piloter, en faisant attention à ne pas transformer immédiatement l'outil en publicité.",
+       "exemples": ["Même logique pour : habitation ; responsabilité civile ; assurance multimédia."]},
+      {"label": "Point d'entrée commercial", "explication": "L'expérience signale simplement la dépense, puis propose éventuellement un produit : un point d'entrée commercial naturel.",
+       "exemples": ["Assurance : dépense prévue — 135 €", "Puis éventuellement : « Besoin d'une assurance santé-mobilité pour ton séjour ? »"]},
+      {"label": "Écosystème mobilité", "explication": "L'outil devient une porte d'entrée vers tout l'écosystème STUDCORP, tout en restant utile même sans souscription.",
+       "exemples": ["Assurance santé-mobilité · habitation · responsabilité civile · assurance multimédia"]}
+    ]},
+    {"id": "mvp", "label": "10. MVP & évolutions", "color": "#274B52", "points": [
+      {"label": "MVP", "explication": "Pour éviter de développer trop de choses dès le départ, un MVP avec seulement 12 fonctions.",
+       "exemples": [{"titre": "Le MVP :", "lignes": ["1. Création du séjour", "2. Budget total", "3. Ajout de dépenses", "4. Catégorisation", "5. Conversion de devises", "6. Dépenses récurrentes", "7. Budget restant", "8. Budget quotidien/hebdomadaire", "9. Dépenses futures / planning", "10. Alertes simples", "11. Dashboard", "12. Bilan du séjour"]}]},
+      {"label": "Après le MVP", "explication": "Seulement ensuite, les évolutions.",
+       "exemples": ["connexion bancaire ; données de coût de la vie ; IA ; comparaison entre villes ; fonctionnalités école ; gamification avancée ; recommandations personnalisées."]},
+      {"label": "Question centrale", "explication": "À définir précisément avant de présenter le projet à l'entreprise : c'est probablement la question la plus importante de tout le projet.",
+       "exemples": ["Pourquoi un étudiant utiliserait STUDCORP Budget plutôt qu'Excel, une application de budget généraliste ou simplement son application bancaire ?"]},
+      {"label": "Réponse à tester", "explication": "Voici la réponse possible, mais il faudra la tester.",
+       "exemples": ["Parce que l'outil est pensé spécifiquement pour la mobilité internationale étudiante : budget de séjour, devises, dépenses de départ, voyages, événements futurs, projection jusqu'au retour en France et accompagnement adapté à la vie étudiante."]}
+    ]},
+    {"id": "cycle", "label": "11. Cycle EcoSTUD", "color": "#385E66", "points": [
+      {"label": "Prévoir", "explication": "Construire son budget avant le départ et intégrer les dépenses déjà connues.",
+       "exemples": ["Séjour à Montréal — 5 mois : budget disponible 7 500 €"]},
+      {"label": "Dépense", "explication": "Renseigner chaque dépense en quelques secondes.",
+       "exemples": ["＋ Ajouter une dépense : 18,50 CAD · Alimentation · McDonald's"]},
+      {"label": "Comparer", "explication": "Mesurer l'écart entre prévu et réel par catégorie, semaine et mois.",
+       "exemples": ["✅ Tu as dépensé 40 € de moins que prévu cette semaine."]},
+      {"label": "Anticiper", "explication": "Intégrer les événements futurs et leur impact sur le reste du séjour.",
+       "exemples": ["27 octobre : Week-end à New York (450 CAD ≈ 298 €)"]},
+      {"label": "Ajuster", "explication": "Modifier son rythme ou ses projets avant de dépasser son budget.",
+       "exemples": ["Et si je dépense 500 € pour un voyage ? Budget quotidien futur : 38 € → 31 €"]}
+    ]}
+  ]
+}

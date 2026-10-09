@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EcoSTUD — Maquette de préproduction</title>
+<link rel="stylesheet" href="maquette.css?v=2">
+</head>
+<body>
+<div class="strip"><a href="index.html#ecostud">← Carte mentale EcoSTUD</a><span class="pre">Maquette de préproduction</span><span>Données fictives</span></div>
+<div class="phone">
+  <div class="head"><h1>EcoSTUD</h1><p>Séjour à Montréal · 12 sept. → 20 janv.</p></div>
+  <div class="screens">
+    <section class="screen on" id="home">
+      <div class="note">🟢 Budget maîtrisé : tu es dans la trajectoire.</div>
+      <div class="card"><h2>Disponible</h2><div class="big">4 660 €</div><div class="muted">sur 7 500 € · dépensé 2 840 € · prévu 3 150 €</div></div>
+      <div class="card"><h2>Temps et budget restants</h2>
+        <div class="row"><span>Temps restant</span><b>54 %</b></div><div class="bar"><i style="width:54%"></i></div>
+        <div class="row"><span>Budget restant</span><b>68 %</b></div><div class="bar"><i style="width:68%;background:var(--ok)"></i></div>
+        <p class="muted">Le budget part moins vite que le temps : bonne situation.</p></div>
+      <div class="card"><h2>Budget quotidien recommandé</h2><div class="big">32 €<span class="muted"> / jour</span></div></div>
+      <div class="note">✅ Tu as dépensé 40 € de moins que prévu cette semaine.</div>
+      <div class="note warn">✈️ Ton week-end à New York représente 12 % de ton budget restant.</div>
+    </section>
+    <section class="screen" id="spend">
+      <div class="card"><h2>Dépenses du mois</h2>
+        <div class="row"><span>🍔 Alimentation</span><b>32 %</b></div><div class="bar"><i style="width:32%"></i></div>
+        <div class="row"><span>🏠 Logement</span><b>28 %</b></div><div class="bar"><i style="width:28%"></i></div>
+        <div class="row"><span>🚇 Transport</span><b>12 %</b></div><div class="bar"><i style="width:12%"></i></div>
+        <div class="row"><span>✈️ Voyages</span><b>10 %</b></div><div class="bar"><i style="width:10%"></i></div>
+        <div class="row"><span>🎉 Loisirs</span><b>9 %</b></div><div class="bar"><i style="width:9%"></i></div>
+        <div class="row"><span>📱 Téléphone · 💡 Autres</span><b>4 % · 5 %</b></div></div>
+      <div class="card"><h2>Dépenses récurrentes</h2>
+        <div class="row"><span>Loyer · le 1er du mois</span><b>700 €</b></div>
+        <div class="row"><span>Abonnement transport</span><b>40 €</b></div>
+        <div class="row"><span>Téléphone</span><b>25 €</b></div>
+        <div class="row"><span>Netflix</span><b>15 €</b></div></div>
+    </section>
+    <section class="screen" id="plan">
+      <div class="card"><h2>Argent réellement disponible</h2>
+        <div class="row"><span>Disponible aujourd'hui</span><b>1 400 €</b></div>
+        <div class="row"><span>Déjà prévu sous 30 jours</span><b>− 850 €</b></div>
+        <div class="row"><span><b>Réellement disponible</b></span><b class="big" style="font-size:22px">550 €</b></div></div>
+      <div class="card"><h2>Octobre</h2>
+        <div class="row"><span>12 · Restaurant</span><b>35 €</b></div>
+        <div class="row"><span>18 · Concert</span><b>53 €</b></div>
+        <div class="row"><span>25 · Voyage Toronto</span><b>210 €</b></div>
+        <div class="row"><span>27 · Week-end New York</span><b>298 €</b></div></div>
+      <div class="note bad">🔴 À ton rythme actuel, tu risques d'épuiser ton budget 18 jours avant la fin de ton séjour.</div>
+    </section>
+    <section class="screen" id="ai">
+      <div id="chat"><div class="bub ai">Je peux t'aider à décider avant de dépenser. Choisis une question :</div></div>
+      <button class="chip" onclick="ask('ny')">Week-end à New York : 350 €</button>
+      <button class="chip" onclick="ask('si')">Et si je dépense 500 € pour un voyage ?</button>
+    </section>
+  </div>
+  <button class="fab" onclick="sheet('add')" aria-label="Ajouter une dépense">＋</button>
+  <div class="sheet" id="add">
+    <h2>Ajouter une dépense</h2>
+    <label for="m">Montant</label>
+    <div style="display:flex;gap:8px"><input id="m" type="number" value="18.5" step="0.01" oninput="conv()"><select id="c" onchange="conv()" style="width:100px"><option>CAD</option><option>EUR</option><option>USD</option></select></div>
+    <div class="muted" id="eq" style="margin-top:4px"></div>
+    <label for="k">Catégorie</label><select id="k"><option>🍔 Alimentation</option><option>🚇 Transport</option><option>🎉 Loisirs</option><option>✈️ Voyages</option></select>
+    <label for="d">Description</label><input id="d" value="McDonald's">
+    <button class="btn" onclick="addExp()">Ajouter</button><button class="btn alt" onclick="sheet()">Annuler</button>
+  </div>
+  <div class="toast" role="status"></div>
+  <nav class="nav" aria-label="Navigation EcoSTUD">
+    <button class="on" data-s="home"><b>🏠</b>Accueil</button><button data-s="spend"><b>📊</b>Dépenses</button>
+    <button data-s="plan"><b>📅</b>Prévu</button><button data-s="ai"><b>💬</b>Assistant</button>
+  </nav>
+</div>
+<script src="maquette.js?v=1"></script>
+<script>
+const R={CAD:.66,USD:.92,EUR:1},fmt=n=>n.toLocaleString('fr-FR',{maximumFractionDigits:0});
+const eur=()=>(+$('#m').value||0)*R[$('#c').value];
+function conv(){$('#eq').textContent='≈ '+fmt(eur())+' €'}
+function addExp(){toast('Dépense ajoutée : '+$('#m').value+' '+$('#c').value+' ≈ '+fmt(eur())+' €');sheet()}
+const A={ny:['Puis-je me payer un week-end à New York à 350 € ?','💰 Cette dépense représente 15 % de ton budget restant. Ton budget quotidien passerait de 31 € à 26 €. Verdict : faisable, mais ton budget sera plus serré pendant les 3 prochaines semaines.'],
+si:['Et si je dépense 500 € pour un voyage ?','Budget actuel : 2 800 € → après le voyage : 2 300 €. Budget quotidien futur : 38 € → 31 €.']};
+function ask(k){$('#chat').insertAdjacentHTML('beforeend','<div class="bub me">'+A[k][0]+'</div><div class="bub ai">'+A[k][1]+'</div>')}
+conv();
+</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cartes mentales interactives des concepts EcoSTUD et MediSTUD.">
+  <title>ITSoppSTUDCORP — Cartes mentales interactives</title>
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" id="mapLogo">E</div>
+      <div class="brand-copy">
+        <div class="title" id="mapTitle">ITSoppSTUDCORP — Cartes mentales interactives</div>
+        <div class="subtitle" id="mapSubtitle">Budget & assistant de décision pour la mobilité internationale étudiante</div>
+      </div>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Choisir la carte mentale">
+      <button class="tab active" type="button" role="tab" aria-selected="true" data-map="ecostud">EcoSTUD</button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-map="medistud">MediSTUD</button>
+    </nav>
+    <div class="controls">
+      <button class="btn" id="closeAll" type="button" aria-label="Tout replier">Replier</button>
+      <button class="btn" id="openAll" type="button" aria-label="Tout déplier">Tout ouvrir</button>
+      <button class="btn" id="zoomOut" type="button" aria-label="Zoom arrière">−</button>
+      <div class="zoom-readout" id="zoomReadout">100%</div>
+      <button class="btn" id="zoomIn" type="button" aria-label="Zoom avant">+</button>
+      <button class="btn primary" id="reset" type="button">Réinitialiser</button>
+    </div>
+  </header>
+
+  <main class="stage">
+    <svg id="canvas" viewBox="0 0 1800 1100" role="img" aria-label="Carte mentale interactive">
+      <defs>
+        <pattern id="dotgrid" width="24" height="24" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1.3" fill="#dfe9ea"></circle>
+        </pattern>
+      </defs>
+      <rect width="1800" height="1100" fill="url(#dotgrid)"></rect>
+      <g id="scene">
+        <g id="links"></g>
+        <g id="nodes"></g>
+      </g>
+    </svg>
+
+    <aside id="examplePanel" class="example-panel" aria-live="polite">
+      <button class="panel-close" onclick="hideExample()" aria-label="Fermer">×</button>
+      <div id="exampleKicker" class="example-kicker">Grande partie</div>
+      <div id="exampleTitle" class="example-title">Sous-partie</div>
+      <div class="example-section">Explication</div>
+      <div id="exampleText" class="example-text"></div>
+      <div class="example-section">Exemples concrets</div>
+      <ul id="exampleList" class="example-list"></ul>
+      <div class="footer-note">Clique sur un autre point pour changer le détail. Le panneau ne bloque pas le déplacement ou le zoom de la carte.</div>
+    </aside>
+
+    <div class="legend">
+      <strong>Navigation :</strong> centre → grandes parties → sous-parties → explication → exemples concrets
+    </div>
+    <div class="help">
+      <strong>Zoom :</strong> molette / boutons · <strong>Carte :</strong> cliquer-glisser · <strong>Bulles :</strong> glisser pour les déplacer
+    </div>
+  </main>
+</div>
+<script src="app.js?v=3"></script>
+<script>
+/* Liens indépendants : index.html#ecostud  et  index.html#medistud */
+(function () {
+  var VALID = ['ecostud', 'medistud'];
+
+  function fromUrl() {
+    var h = (location.hash || '').replace('#', '').toLowerCase();
+    if (VALID.indexOf(h) !== -1) return h;
+    var q = new URLSearchParams(location.search).get('map');
+    q = q && q.toLowerCase();
+    return VALID.indexOf(q) !== -1 ? q : null;
+  }
+
+  function current() {
+    var a = document.querySelector('.tab.active');
+    return a ? a.getAttribute('data-map') : null;
+  }
+
+  function show(map) {
+    if (!map || current() === map) return;
+    var t = document.querySelector('.tab[data-map="' + map + '"]');
+    if (t) t.click();
+  }
+
+  // Quand on change d'onglet, l'adresse est mise à jour (pour copier/partager le lien)
+  document.querySelectorAll('.tab[data-map]').forEach(function (t) {
+    t.addEventListener('click', function () {
+      var map = t.getAttribute('data-map');
+      if (location.hash !== '#' + map) history.replaceState(null, '', '#' + map);
+    });
+  });
+
+  // À l'ouverture du lien : afficher la bonne carte
+  document.addEventListener('DOMContentLoaded', function () { show(fromUrl()); });
+  window.addEventListener('load', function () { show(fromUrl()); });
+  window.addEventListener('hashchange', function () { show(fromUrl()); });
+})();
+</script>
+</body>
+</html>

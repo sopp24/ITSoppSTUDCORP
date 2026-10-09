@@ -1,0 +1,89 @@
+{
+  "levels": {
+    "center": {
+      "label": "MediSTUD",
+      "description": "Permettre à un étudiant à l'étranger de centraliser son suivi médical, de surmonter la barrière de la langue, de trouver des professionnels de confiance et de gérer ses traitements quotidiens depuis une seule interface visuelle et connectée."
+    }
+  },
+  "categories": [
+    {
+      "id": "vision", "label": "1. Vision & promesse", "color": "#2F6674",
+      "points": [
+        {"label": "Objectif & nom", "explication": "Permettre à un étudiant à l'étranger de centraliser son suivi médical, de surmonter la barrière de la langue, de trouver des professionnels de confiance et de gérer ses traitements quotidiens depuis une seule interface visuelle et connectée.",
+         "exemples": ["Nom : MediSTUD (ou STUDCare / HealthSTUD)", "Module intégré directement à la plateforme STUDCORP (écosystème « tout-en-un »)", "Ou web-app séparée"]},
+        {"label": "Les 4 grandes fonctions", "explication": "La promesse du service repose sur 4 fonctions qui forment un cycle : j'ai un pépin → je l'enregistre → je trouve un médecin de confiance → je me soigne (et je n'oublie pas mon traitement).",
+         "exemples": ["Localiser : l'étudiant identifie visuellement son problème de santé sur un schéma corporel", "Traduire & Comprendre : il accède aux équivalences de médicaments locaux et à la traduction de son dossier", "Consulter : il trouve un établissement vérifié par STUDCORP", "Suivre : il gère ses traitements de fond, cycles et soins avec des rappels interactifs"]},
+        {"label": "Parcours utilisateur idéal", "explication": "L'étudiant configure son profil santé avant ou pendant son séjour, puis utilise l'application dès qu'il tombe malade ou a un accident.",
+         "exemples": [
+           {"titre": "Configuration du profil santé", "lignes": ["Pays de destination", "Traitements de fond actuels", "Allergies et antécédents majeurs", "Suivi menstruel (optionnel)"]},
+           {"titre": "Quand il tombe malade ou a un accident", "lignes": ["Il ouvre l'application et clique sur la zone concernée du schéma du corps (ex : la cheville)", "Il y associe un événement : Entorse, le 14 octobre", "L'application lui suggère un établissement médical vérifié à proximité", "Après le rendez-vous, il ajoute le diagnostic et l'ordonnance (traduits dans sa langue)"]}]},
+        {"label": "Pourquoi MediSTUD ?", "explication": "Question centrale : pourquoi utiliser MediSTUD plutôt qu'Apple Health, Doctolib (s'il existe sur place) ou Flo (pour les cycles) ? Parce qu'aucun outil classique ne gère l'expatriation. C'est le seul carnet de santé pensé pour le passage d'une frontière.",
+         "exemples": ["Lève la barrière de la langue (traduction médicale)", "Résout le casse-tête des médicaments étrangers (équivalences)", "Sécurise l'étudiant dans un système de santé inconnu (réseau vérifié)", "Fait le pont avec son assurance voyage"]}
+      ]
+    },
+    {
+      "id": "corps", "label": "2. Schéma corporel", "color": "#E06666",
+      "points": [
+        {"label": "Le corps interactif", "explication": "C'est le cœur de l'idée : un corps humain interactif, vu de face et de dos. L'étudiant clique sur la zone concernée pour y rattacher un problème de santé.",
+         "exemples": ["Vues de face et de dos", "Zones cliquables : 🤕 Tête, 🫁 Poumons, 🦵 Genou", "Exemple : clic sur la cheville pour une entorse"]},
+        {"label": "Points de couleur & historique", "explication": "Des points de couleur apparaissent là où il y a un historique. En cliquant sur un point, l'étudiant ouvre sa « base de données médicale » liée à cette zone.",
+         "exemples": ["🔴 Actuel : angine en cours (gorge)", "🟢 Passé : entorse guérie (cheville)", {"titre": "Base de données médicale de la zone", "lignes": ["Date du problème", "Médecin consulté", "Ordonnance reçue"]}]},
+        {"label": "Ajout rapide (5 secondes)", "explication": "Ajouter un symptôme ou un soin doit être immédiat : il faut imaginer un bouton d'urgence ou d'ajout rapide.",
+         "exemples": [{"titre": "Exemple : mal au ventre", "lignes": ["Clic sur le corps (Ventre)", "Quoi ? 🤢 Nausées", "Intensité ? Modérée", "Date ? Aujourd'hui", "→ Enregistrer (prend 5 secondes)"]}]}
+      ]
+    },
+    {
+      "id": "traduction", "label": "3. Traduction & équivalences", "color": "#8ECECE",
+      "points": [
+        {"label": "Équivalences de médicaments", "explication": "C'est le pendant de la conversion de devises d'EcoSTUD, mais pour la santé. Le problème : le nom et le dosage des médicaments changent selon les pays.",
+         "exemples": ["L'étudiant saisit : Doliprane 1000mg", "L'application affiche l'équivalent local", "🇺🇸 Aux États-Unis / Canada : Tylenol (Paracetamol) – demander « Acetaminophen » en pharmacie"]},
+        {"label": "Traduction automatique", "explication": "Toutes les notes du médecin étranger, les diagnostics et les posologies sont traduits automatiquement dans la langue maternelle de l'étudiant, pour éviter des erreurs de compréhension dangereuses.",
+         "exemples": ["Notes du médecin étranger", "Diagnostics", "Posologies", "Diagnostic et ordonnance ajoutés après le rendez-vous, traduits dans sa langue"]},
+        {"label": "Chatbot IA « Comment dire… »", "explication": "Assistant de mobilité avec des fonctions « Comment dire… » et « Est-ce grave ? ». L'outil génère une carte vocale ou textuelle à montrer au professionnel de santé.",
+         "exemples": ["L'étudiant : « Comment expliquer au pharmacien espagnol que j'ai des brûlures d'estomac depuis hier ? »", "Carte générée : « Tengo acidez estomacal desde ayer. »"]},
+        {"label": "Vérification d'interaction", "explication": "L'IA donne une première indication de contre-indication basée sur la composition, tout en rappelant de toujours demander au pharmacien.",
+         "exemples": ["« Puis-je prendre du sirop pour la toux [Nom local] avec mon traitement pour le cœur ? »", "Rappel systématique : demander conseil au pharmacien"]}
+      ]
+    },
+    {
+      "id": "reseau", "label": "4. Réseau médical vérifié", "color": "#28A745",
+      "points": [
+        {"label": "Le problème à résoudre", "explication": "À l'étranger, l'étudiant ne sait jamais où aller. L'annuaire STUDCORP répond à ses craintes.",
+         "exemples": ["Peur des arnaques", "Peur des hôpitaux hors de prix", "Peur des mauvais soins"]},
+        {"label": "Moteur « Où me soigner ? »", "explication": "Un moteur de recherche intégré affiche une carte avec des établissements médicaux et des pharmacies vérifiés au préalable par STUDCORP.",
+         "exemples": ["Carte des établissements médicaux et pharmacies vérifiés", "Suggestion d'un établissement vérifié à proximité après l'ajout d'un événement (ex : entorse)", "MVP : annuaire des médecins/hôpitaux vérifiés dans les principales villes étudiantes"]},
+        {"label": "Filtres de recherche", "explication": "Des filtres permettent de trouver rapidement la bonne structure selon le besoin.",
+         "exemples": ["Médecins parlant français / anglais", "Cliniques partenaires de l'assurance", "Urgences 24/7"]}
+      ]
+    },
+    {
+      "id": "suivi", "label": "5. Suivi & alertes", "color": "#F2A541",
+      "points": [
+        {"label": "Alertes intelligentes", "explication": "Des notifications push interactives, loin du simple rappel de calendrier, avec checklists de soins.",
+         "exemples": [{"titre": "Traitement ponctuel", "lignes": ["💊 Il est 20h, as-tu pris ton antibiotique ? [ Case à cocher ✅ ]"]}, {"titre": "Renouvellement", "lignes": ["⚠️ Ton traitement de fond pour l'asthme se termine dans 7 jours. Pense à consulter un médecin pour renouveler ton ordonnance."]}, {"titre": "Suivi de soins", "lignes": ["🩺 Cela fait 3 jours que tu as signalé une douleur à la cheville. Est-ce que ça va mieux ?"]}]},
+        {"label": "Traitements de fond", "explication": "Une section dédiée au quotidien, indépendante des « pépins », avec des rappels discrets.",
+         "exemples": ["Pilule contraceptive", "Traitement pour la thyroïde", "Diabète, etc.", "Rappels simples avec cases à cocher (traitements / pilule)"]},
+        {"label": "Suivi menstruel", "explication": "Intégré à l'application. Très utile car les voyages, le stress de l'expatriation et le décalage horaire dérèglent souvent les cycles. L'étudiante a tout au même endroit, sans multiplier les applications.",
+         "exemples": ["Option activable dans le profil santé", "Cycles dérégulés par voyage, stress et décalage horaire", "Version poussée prévue après le MVP"]}
+      ]
+    },
+    {
+      "id": "assurance", "label": "6. Assurance & export", "color": "#A56B96",
+      "points": [
+        {"label": "Lien avec l'assurance STUDCORP", "explication": "Si le module est intégré à la plateforme STUDCORP (qui vend potentiellement des assurances santé-mobilité), le suivi médical et le suivi administratif (remboursement) sont fusionnés au même endroit.",
+         "exemples": ["Tu sors de chez le médecin pour ton entorse (90 $)", "Bouton : 📸 Photographier la facture et envoyer à mon assurance STUDCORP pour remboursement", "Plus tard : API d'assurance pour un remboursement automatique"]},
+        {"label": "Bilan santé exportable", "explication": "À son retour dans son pays d'origine, l'étudiant doit souvent mettre à jour son vrai médecin traitant. Un bouton « Exporter mon dossier de mobilité » génère un PDF propre et traduit (en français).",
+         "exemples": [{"titre": "Le PDF résume", "lignes": ["Les maladies contractées à l'étranger", "Les médecins vus", "Les traitements prescrits sur place"]}]}
+      ]
+    },
+    {
+      "id": "mvp", "label": "7. MVP & feuille de route", "color": "#274B52",
+      "points": [
+        {"label": "MVP (première version)", "explication": "Pour la première version, on se concentre sur cinq briques essentielles.",
+         "exemples": ["Profil santé de base (allergies, sang)", "Schéma corporel interactif simple (ajout de pépins/symptômes)", "Base d'équivalences pour les 50 médicaments les plus courants (douleur, fièvre, digestion)", "Annuaire des médecins/hôpitaux vérifiés STUDCORP dans les principales villes étudiantes", "Rappels simples avec cases à cocher (traitements/pilule)"]},
+        {"label": "Et ensuite", "explication": "Les fonctions plus avancées viennent après la validation du MVP.",
+         "exemples": ["Suivi menstruel poussé", "Traduction d'ordonnances par scan optique (OCR)", "Chatbot IA médical", "Lien direct avec les API d'assurance pour le remboursement automatique"]}
+      ]
+    }
+  ]
+}
