@@ -100,5 +100,6 @@ const on=new Set();
 $$('.chip[data-toggle]').forEach(c=>c.onclick=()=>{c.classList.toggle('on');c.classList.contains('on')?on.add(c.dataset.toggle):on.delete(c.dataset.toggle);
  $$('.place').forEach(p=>p.style.display=[...on].every(t=>p.dataset.t.split(' ').includes(t))?'':'none')});
 </script>
+<a class="sopp-home-float" href="https://sopp24.github.io/SOPP-agents/" aria-label="Retour à l’accueil de SOPP Agents" title="Retour à SOPP Agents"><img src="https://sopp24.github.io/SOPP-agents/assets/brand-mark.webp" alt="" aria-hidden="true"></a>
 </body>
 </html>
